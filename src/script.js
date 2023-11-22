@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const main = document.getElementById("main");
 
     drinksWithInstructionsES.forEach(async (id) => {
-        const drink = await getData(id);
+        const drink = await getDataById(id);
         const card = createCard(drink["idDrink"], drink["strDrink"], drink["strDrinkThumb"], drink["strInstructionsES"]);
         main.appendChild(card);
     });
@@ -51,3 +51,8 @@ document.getElementById("searchButton").addEventListener("click", async() => {
     searchInput.value = "";
 });
 
+document.getElementById("submitButton").addEventListener("click", function(event) {
+    event.preventDefault();
+    document.getElementById("containerForm").style.display = "none";
+
+})

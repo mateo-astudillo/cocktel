@@ -9,7 +9,7 @@ const getDataByName = async(cocktail) => {
     return data["drinks"];
 }
 
-const getData = async (id) => {
+const getDataById = async (id) => {
     const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`;
     const response = await fetch(url);
     if (!response.ok) {
@@ -47,7 +47,7 @@ const createCard = (id, name, sourceImage, instruction) => {
     $drinkButton.textContent = "dar reseña".toUpperCase();
     $drinkButton.setAttribute("class", "drinkButton")
     $drinkButton.addEventListener("click", () => {
-        mostrarFormulario(id);
+        showForm(id);
     });
 
     // CARD
@@ -59,4 +59,13 @@ const createCard = (id, name, sourceImage, instruction) => {
     $cardConteiner.appendChild($drinkButton);
 
     return $cardConteiner
+}
+
+function showForm(id, name) {
+    const formulario = document.getElementById('containerForm').style.display = "block";
+}
+
+function hideForm() {
+    const formulario = document.getElementById('containerForm');
+    formulario.style.display = 'none';
 }
