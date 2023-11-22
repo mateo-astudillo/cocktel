@@ -63,6 +63,5 @@ const createCard = (id, name, sourceImage, instruction) => {
 
 function showForm(id, name) {
     document.getElementById('containerForm').style.display = "block";
-    document.getElementById("titleForm").innerHTML += " " + name;
-    console.log(id, name)
+    document.getElementById("titleForm").innerHTML = "Valorar " + name;
 }
