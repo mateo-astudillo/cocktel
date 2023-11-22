@@ -1,0 +1,27 @@
+#searchContainer {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+#searchInput {
+    margin: 5px;
+    font-size: 2em;
+    width: 70%;
+    border-color: var(--primary-background);
+}
+
+#messageNotFound {
+    display: none;
+}
+
+#invalidText {
+    font-size: 2em;
+    width: 70%;
+    border-color: var(--third-color);
+}
+
+#searchButton {
+    width: 15%;
+    font-size: 2em;
+}

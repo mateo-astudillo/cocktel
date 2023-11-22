@@ -1,0 +1,20 @@
+header {
+    color: var(--primary-color);
+    background-color: var(--primary-background);
+    padding: 19px;
+
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+#logo, #judge {
+    height: 39px;
+    width: 39px;
+}
+
+#title {
+    color: var(--third-color);
+    font-size: 3em;
+}

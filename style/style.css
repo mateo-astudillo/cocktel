@@ -1,0 +1,145 @@
+:root {
+    --primary-background: #010101;
+    --second-background: #676767;
+    --third-color: #A64153;
+    --second-color: #F9F9F9;
+    --primary-color: #EDE8E4;
+}
+
+* {
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--primary-background);
+}
+
+
+#main, #searchedContainer {
+    background-color: var(--primary-background);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    gap: 2%;
+}
+
+
+.drink {
+    padding: 10px;
+    max-width: 400px;
+    background-color: var(--primary-background);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: center;
+}
+
+.drinkTitle {
+    max-width: 90%;
+    font-size: 1.6em;
+    color: var(--primary-color);
+}
+
+.drinkImage {
+    width: 90%;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    transition: 0.5s;
+    border-radius: 5%;
+}
+
+.drinkImage:hover {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    transition: 0.5s;
+}
+
+.drinkInstructionContainer {
+    padding: 10px;
+    max-width: 90%;
+    max-height: 80px;
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.drinkInstruction {
+    font-size: 1.2em;
+    color: var(--primary-color);
+    text-align: justify;
+}
+
+.drinkButton {
+    padding: 6px;
+    margin: 5px;
+    font-size: 1em;
+    color: var(--second-color);
+    background: var(--third-color);
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.drinkButton:active {
+    transform: scale(0.9);
+}
+
+p, a, h1 {
+    text-decoration: none;
+    color: var(--second-color);
+}
+
+.link:hover{
+    color: var(--third-color);
+}
+
+.info {
+    display: flex;
+    justify-content: space-around; 
+    background-color: #3a3b47; 
+    margin-top: 25px; 
+    padding: 25px 0px;
+}
+
+.icons {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 15px; 
+    padding-bottom: 5px; 
+    border-bottom: 1px solid var(--third-color); 
+}
+
+.footerTitle {
+    margin-left: 8px;
+    font-size: 25px;
+}
+
+i {
+    font-size: 22px; 
+    color: white;  
+}
+
+.data {
+    font-size: 16px;
+}
+
+.website {
+    display: flex; 
+    flex-direction: column;
+    gap: 10px;
+}
+
+.copyright{
+    display: flex;
+    justify-content: center; 
+    background-color: #26262f; 
+    padding: 25px 0px;
+}
+
+.copyTitle{  
+    font-size: 15px;
+}
