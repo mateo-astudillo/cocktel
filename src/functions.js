@@ -47,7 +47,7 @@ const createCard = (id, name, sourceImage, instruction) => {
     $drinkButton.textContent = "dar reseña".toUpperCase();
     $drinkButton.setAttribute("class", "drinkButton")
     $drinkButton.addEventListener("click", () => {
-        showForm(id);
+        showForm(id, name);
     });
 
     // CARD
@@ -62,10 +62,7 @@ const createCard = (id, name, sourceImage, instruction) => {
 }
 
 function showForm(id, name) {
-    const formulario = document.getElementById('containerForm').style.display = "block";
-}
-
-function hideForm() {
-    const formulario = document.getElementById('containerForm');
-    formulario.style.display = 'none';
+    document.getElementById('containerForm').style.display = "block";
+    document.getElementById("titleForm").innerHTML += " " + name;
+    console.log(id, name)
 }

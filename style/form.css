@@ -1,17 +1,25 @@
-.containerForm {
+body {
+    position: relative;
+}
+
+#containerForm {
     display: none;
     position: fixed;
-    top: 40%;
-    left: 40%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
+#appreciateForm { 
+    position: absolute;
+    display: block;
+    top: 30%;
+    left: 40%;
+    padding: 20px;
+    background-color: var(--primary-background);
 }
   
-.aprecciatte {
-    background-color: var(--primary-color);
-    padding: 25px;
-    width: 300px;
-    border-radius: 8px;
-}
   
 #submitButton {
     margin-top: 10px;
