@@ -53,6 +53,5 @@ document.getElementById("searchButton").addEventListener("click", async() => {
 
 document.getElementById("submitButton").addEventListener("click", function(event) {
     event.preventDefault();
-    document.getElementById("containerForm").style.display = "none";
-
+    hideForm();
 })

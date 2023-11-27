@@ -75,14 +75,40 @@
   <div id="containerForm">
     <form id="appreciateForm" action="" method="post">
       <h2 id="titleForm"></h2>
-      <label for="name">Nombre:</label>
-      <input type="text" id="name" name="name" required><br><br>
 
-      <label for="surname">Apellido:</label>
-      <input type="text" id="surname" name="surname" required><br><br>
+      <div class="inputLabel">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
 
-      <label for="mail">Email:</label>
-      <input type="email" id="mail" name="mail" required><br><br>
+      <div class="inputLabel">
+        <label for="surname">Apellido:</label>
+        <input type="text" id="surname" name="surname" required>
+      </div>
+
+      <div class="inputLabel">
+        <label for="mail">Email:</label>
+        <input type="email" id="mail" name="mail" required>
+      </div>
+
+      <label for="observation">Observaciones:</label>
+      <textarea id="observation" name="observation" rows="5" cols="33"></textarea>
+
+      <label id="valoracion" for="valoracion">Valoración:</label>
+      <div class="rating">
+
+        <input type="radio" id="estrella5" name="valoracion" value="5">
+        <label for="estrella5"></label>
+        <input type="radio" id="estrella4" name="valoracion" value="4">
+        <label for="estrella4"></label>
+        <input type="radio" id="estrella3" name="valoracion" value="3">
+        <label for="estrella3"></label>
+        <input type="radio" id="estrella2" name="valoracion" value="2">
+        <label for="estrella2"></label>
+        <input type="radio" id="estrella1" name="valoracion" value="1">
+        <label for="estrella1"></label>
+
+      </div>
 
       <button id="submitButton" type="submit">Enviar</button>
     </form>

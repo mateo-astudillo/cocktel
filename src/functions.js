@@ -62,6 +62,15 @@ const createCard = (id, name, sourceImage, instruction) => {
 }
 
 function showForm(id, name) {
-    document.getElementById('containerForm').style.display = "block";
+    document.getElementById("containerForm").style.display = "flex";
     document.getElementById("titleForm").innerHTML = "Valorar " + name;
+}
+
+function hideForm() {
+    document.getElementById("containerForm").style.display = "none";
+    document.getElementById("name").value = "";
+    document.getElementById("surname").value = "";
+    document.getElementById("mail").value = "";
+
+
 }
