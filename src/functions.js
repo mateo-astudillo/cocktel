@@ -1,6 +1,5 @@
 const getDataByName = async(cocktail) => {
     const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`;
-    console.log(url)
     const response = await fetch(url);
     if (!response.ok) {
         throw new Error("Error server");
@@ -44,7 +43,7 @@ const createCard = (id, name, sourceImage, instruction) => {
     $drinkInstructionContainer.appendChild($drinkInstruction)
 
     // BUTTON
-    $drinkButton.textContent = "dar reseña".toUpperCase();
+    $drinkButton.textContent = "DAR RESEÑA";
     $drinkButton.setAttribute("class", "drinkButton")
     $drinkButton.addEventListener("click", () => {
         showForm(id, name);
@@ -61,6 +60,28 @@ const createCard = (id, name, sourceImage, instruction) => {
     return $cardConteiner
 }
 
+function searchCocktail(drinks, searchedContainer) {
+    console.log(drinks);
+    if (drinks == null) {
+        const notFoundContainer = document.getElementById("notFoundContainer");
+        notFoundContainer.style.display = "block";
+        setTimeout(() => {
+            searchInput.value = "";
+            notFoundContainer.style.display = "none";
+        }, 2000);
+        return
+    }
+
+    drinks.forEach((drink) => {
+        let strInstruction = drink["strInstructionsES"];
+        if (strInstruction == null)
+            strInstruction = drink["strInstructions"]
+        const card = createCard(drink["idDrink"], drink["strDrink"], drink["strDrinkThumb"], strInstruction);
+        searchedContainer.appendChild(card);
+    })
+    searchInput.value = "";
+}
+
 function showForm(id, name) {
     document.getElementById("containerForm").style.display = "flex";
     document.getElementById("titleForm").innerHTML = "Valorar " + name;
@@ -71,6 +92,13 @@ function hideForm() {
     document.getElementById("name").value = "";
     document.getElementById("surname").value = "";
     document.getElementById("mail").value = "";
+    document.getElementById("observation").value = "";
+}
 
-
+function validate() {
+    const name = document.getElementById("name")
+    const surname = document.getElementById("surname")
+    const mail = document.getElementById("mail")
+    const observation = document.getElementById("observation")
+    return true;
 }

@@ -10,48 +10,32 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 document.getElementById("searchButton").addEventListener("click", async() => {
-    const searchedConteiner = document.getElementById("searchedContainer");
+    const searchedContainer = document.getElementById("searchedContainer");
     const searchInput = document.getElementById("searchInput");
 
-    while (searchedConteiner.firstChild) {
-        searchedConteiner.removeChild(searchedConteiner.firstChild);
+    while (searchedContainer.firstChild) {
+        searchedContainer.removeChild(searchedContainer.firstChild);
     }
 
     let cocktail = searchInput.value;
     if (!/^[A-Za-z ]+$/.test(cocktail)) {
-        searchInput.setAttribute("id", "invalidText");
+        searchInput.setCustomValidity("Solo letras");
         setTimeout(() => {
-            searchInput.setAttribute("id", "searchInput");
             searchInput.value = "";
+            searchInput.setCustomValidity("");
         }, 2000);
         return
     }
-
-    const drinks = await getDataByName(cocktail);
-    console.log(drinks);
-    if (drinks == null) {
-        setTimeout(() => {
-            document.getElementById("messageNotFound").style = "display: block;";
-
-            searchInput.value = "";
-        }, 2000);
-        document.getElementById("notFound").style = "display: none;";
-        return
-    }
-
-    drinks.forEach((drink) => {
-        let strInstruction = drink["strInstructionsES"];
-        console.log(strInstruction);
-        if (strInstruction == null) {
-            strInstruction = drink["strInstructions"]
-        }
-        const card = createCard(drink["idDrink"], drink["strDrink"], drink["strDrinkThumb"], strInstruction);
-        searchedConteiner.appendChild(card);
-    })
-    searchInput.value = "";
+    searchCocktail(await getDataByName(cocktail), searchedContainer);
 });
 
 document.getElementById("submitButton").addEventListener("click", function(event) {
+    event.preventDefault();
+    validate();
+    hideForm();
+})
+
+document.getElementById("cancelButton").addEventListener("click", function(event) {
     event.preventDefault();
     hideForm();
 })

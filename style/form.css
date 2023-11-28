@@ -15,9 +15,11 @@ body {
 
 #appreciateForm { 
     position: absolute;
-    display: block;
-    top: 30%;
-    left: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    top: 20%;
+    left: 30%;
     padding: 20px;
     background-color: var(--third-color);
 }
@@ -28,55 +30,57 @@ body {
     justify-content: center;
     padding-bottom: 10px;
 }
-  
+
+.input-label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-label input {
+    width: 70%;
+}
+
+.input-label label {
+    width: 30%;
+}
 
 #observation {
     display: flex;
     align-items: center;
 }
 
-#appreciateForm label {
-    padding-right: 30px;
-}
-
-#appreciateForm #mail {
-    margin-left: 17px;
-}
-
-
-.rating {
+#rating {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
-.rating input {
+#rating input {
     display: none;
 }
 
-.rating label {
+#rating label {
     cursor: pointer;
     font-size: 25px;
 }
 
-.rating label:before {
+#rating label:before {
     content: '★';
     padding: px;
     color: #777777;
 }
 
-.rating input:checked ~ label:before {
+#rating input:checked ~ label:before {
     color: #ffdd00;
 }
 
-#valoracion {
-    margin-top: 10px;
+#buttonContainer {
     display: flex;
-    padding-top: 10px;
+    justify-content: space-evenly;
+
 }
 
-#submitButton {
-    margin-top: 10px;
+#buttonContainer button { 
     padding: 5px 10px;
     background-color: #ccc;
     border: none;

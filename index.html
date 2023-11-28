@@ -14,7 +14,7 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <script src="https://kit.fontawesome.com/d2ff00c46e.js" crossorigin="anonymous"></script>
   <title>Cocktails</title>
-  <script src="src/functions.js"></script>
+  <script defer src="src/functions.js"></script>
   <script defer src="src/script.js"></script>
 </head>
 
@@ -31,8 +31,11 @@
   </div>
 
   <div id="searchedContainer">
-    <p id="messageNotFound">No se encontró ningún trago</p>
   </div>
+  <div id="notFoundContainer">
+    <p>No se encontró ningún trago</p>
+  </div>
+
   <main id="main"></main>
 
   <footer>
@@ -40,7 +43,7 @@
       <div class="website">
         <div class="icons">
           <i class="fa-solid fa-code"></i>
-          <h1 class="footerTitle">Desarrolladores </h1>
+          <h1 class="footer-title">Desarrolladores </h1>
         </div>
         <p class="data">Astudillo Mateo </p>
         <p class="data">Sosa Agustin </p>
@@ -49,7 +52,7 @@
       <div class="website">
         <div class="icons">
           <i class="fa-brands fa-github"></i>
-          <h1 class="footerTitle">Github</h1>
+          <h1 class="footer-title">Github</h1>
         </div>
         <a target="_blank" class="data" href="https://github.com/mateo-astudillo">mateo-astudillo</a>
         <a target="_blank" class="data" href="https://github.com/agustinsosa10">agustinsosa10</a>
@@ -58,7 +61,7 @@
       <div class="website">
         <div class="icons">
           <i class="fa-brands fa-instagram"></i>
-          <h1 class="footerTitle">Instagram</h1>
+          <h1 class="footer-title">Instagram</h1>
         </div>
         <a target="_blank" class="data" href="https://www.instagram.com/ast.mateo/">@ast.mateo</a>
         <a target="_blank" class="data" href="https://www.instagram.com/agustinsosa.10/">@agustinsosa.10</a>
@@ -66,7 +69,7 @@
     </div>
 
     <div class="copyright">
-      <h1 class="copyTitle">
+      <h1 class="copy-title">
         © 2023 - Pagina creada como proyecto para la universidad UNVIME
       </h1>
     </div>
@@ -76,17 +79,17 @@
     <form id="appreciateForm" action="" method="post">
       <h2 id="titleForm"></h2>
 
-      <div class="inputLabel">
+      <div class="input-label">
         <label for="name">Nombre:</label>
         <input type="text" id="name" name="name" required>
       </div>
 
-      <div class="inputLabel">
+      <div class="input-label">
         <label for="surname">Apellido:</label>
         <input type="text" id="surname" name="surname" required>
       </div>
 
-      <div class="inputLabel">
+      <div class="input-label">
         <label for="mail">Email:</label>
         <input type="email" id="mail" name="mail" required>
       </div>
@@ -94,23 +97,25 @@
       <label for="observation">Observaciones:</label>
       <textarea id="observation" name="observation" rows="5" cols="33"></textarea>
 
-      <label id="valoracion" for="valoracion">Valoración:</label>
-      <div class="rating">
-
-        <input type="radio" id="estrella5" name="valoracion" value="5">
-        <label for="estrella5"></label>
-        <input type="radio" id="estrella4" name="valoracion" value="4">
-        <label for="estrella4"></label>
-        <input type="radio" id="estrella3" name="valoracion" value="3">
-        <label for="estrella3"></label>
-        <input type="radio" id="estrella2" name="valoracion" value="2">
-        <label for="estrella2"></label>
-        <input type="radio" id="estrella1" name="valoracion" value="1">
-        <label for="estrella1"></label>
-
+      <label id="valuation" for="valuation">Valoración:</label>
+      <div id="rating">
+        <input type="radio" id="star5" name="valuation" value="5">
+        <label for="star5"></label>
+        <input type="radio" id="star4" name="valuation" value="4">
+        <label for="star4"></label>
+        <input type="radio" id="star3" name="valuation" value="3">
+        <label for="star3"></label>
+        <input type="radio" id="star2" name="valuation" value="2">
+        <label for="star2"></label>
+        <input type="radio" id="star1" name="valuation" value="1" checked>
+        <label for="star1"></label>
       </div>
 
-      <button id="submitButton" type="submit">Enviar</button>
+      <div id="buttonContainer">
+        <button id="cancelButton" type="button">Cancelar</button>
+        <button id="submitButton" type="submit">Enviar</button>
+      </div>
+
     </form>
   </div>
 
